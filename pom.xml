@@ -15,7 +15,7 @@
 	<name>tasks-backend</name>
 	<packaging>jar</packaging>
 	<description>A very simple task management tool</description>
-
+ 
 	<properties>
 		<java.version>1.8</java.version>
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
