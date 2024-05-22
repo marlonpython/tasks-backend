@@ -17,4 +17,5 @@ public class DateUtilsTest {
         boolean result = DateUtils.isEqualOrFutureDate(before);
         assertFalse(result);
     }
+    
 }
