@@ -18,7 +18,7 @@ pipeline{
             }
             stage('Sonar'){
                 environment{
-                    scanner = tool 'SONAR_SCANNER'
+                    scanner = tool 'SONAR_SCANER'
                 }
                 steps{
                     withSonarQubeEnv('SONAR'){
@@ -29,4 +29,3 @@ pipeline{
             }    
         }
     }
-    
