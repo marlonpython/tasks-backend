@@ -26,6 +26,27 @@ pipeline{
                     }
                 }
 
-            }    
+            } 
+        pipeline{
+            agent any 
+                Stages{
+                    Stage('Stage 1'){
+                        steps{
+                            echo             
+                    }        
+                }    
+            }
+        }
+        stage('QualityGate'){
+                    steps {
+                        sleep(10)
+                        timeout(1){
+                            withForQualityGate abortPipeline:false, credentialsId: 'token_sonar'
+                                }
+                         }
+                        }   
+
+
+               
         }
     }
