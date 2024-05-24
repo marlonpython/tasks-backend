@@ -39,7 +39,15 @@ pipeline {
             steps{
                 sh 'docker build -t backend .'
             }
-        }   
+        }
+                stage('Clean'){
+            steps{
+                catchError(buildResult: 'SUCCESS'){
+                        sh 'docker  stop tasks' 
+                }
+              
+            }
+        }    
             
     }
 }
