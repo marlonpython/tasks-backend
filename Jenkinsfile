@@ -40,12 +40,17 @@ pipeline {
                 sh 'docker build -t backend .'
             }
         }
-                stage('Clean'){
+        stage('Clean'){
             steps{
                 catchError(buildResult: 'SUCCESS'){
                         sh 'docker  stop tasks' 
                 }
               
+            }
+        }
+        stage('Deploy'){
+            steps{
+                sh 'docker run -d --rm --name tasks -e DATABASE_HOST=172.17.0.1 -p 8001:8001 backend'
             }
         }    
             
